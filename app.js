@@ -9,10 +9,16 @@ for (let i = 0; i < arr.length; i += 1) {
   }
 }
 
-console.log(arr);
+// console.log(arr, pos);
 
-function myFunction() {
-  console.log('My function');
+function Man(name) {
+  this.name = name;
+  this.age = 30;
+  this.rate = Math.floor(Math.random() * (10 + 1));
+  this.icon = (this.rate > 5) ? '*' : '()';
+  this.position = (function p(pos) { return pos + this.position + 1; });
 }
 
-myFunction();
+for (let i = 0; i < 20; i++) {
+  console.log(new Man('adam', 5));
+}
